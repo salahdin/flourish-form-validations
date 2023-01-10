@@ -19,6 +19,7 @@ class RelationshipFatherInvolvementFormValidator(FormValidatorMixin, FormValidat
                          field='partner_present',
                          field_required='why_partner_absent')
 
+
         non_applicable_fields = ['disclosure_to_partner', 'discussion_with_partner', 'disclose_status']
         
         for fields in non_applicable_fields:

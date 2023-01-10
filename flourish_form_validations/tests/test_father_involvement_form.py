@@ -280,7 +280,7 @@ class TestRelationshipFatherInvolvement(TestModeMixin, TestCase):
             self.fail(f'ValidationError unexpectedly raised. Got{e}')
 
 
-    def test_disclosure_not_required(self):
+    def test_disclosure_not_applicable(self):
         self.clean_data['partner_present'] = NO
 
         self.clean_data.update({
@@ -313,6 +313,7 @@ class TestRelationshipFatherInvolvement(TestModeMixin, TestCase):
         self.assertRaises(ValidationError, form_validator.validate)
         self.assertIn('disclosure_to_partner', form_validator._errors)
 
+
     def test_discussion_with_partner_not_required(self):
         self.clean_data['partner_present'] = YES
 
@@ -324,6 +325,7 @@ class TestRelationshipFatherInvolvement(TestModeMixin, TestCase):
 
         self.assertRaises(ValidationError, form_validator.validate)
         self.assertIn('discussion_with_partner', form_validator._errors)
+
 
     def test_disclose_status_not_required(self):
         self.clean_data['partner_present'] = YES
