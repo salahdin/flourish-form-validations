@@ -6,7 +6,6 @@ from .crf_form_validator import FormValidatorMixin
 class HIVInfantTestingFormValidator(FormValidatorMixin, FormValidator):
 
     def clean(self):
-        super().clean()
 
         self.required_if(
             YES,
